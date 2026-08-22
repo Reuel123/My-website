@@ -1,7 +1,37 @@
-const button = document.getElementById("exploreButton");
+// Current year
+const year = document.getElementById("year");
 
-button.addEventListener("click", () => {
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
 
-    button.innerText = "Let's build something.";
 
+// Scroll reveal animation
+const revealElements = document.querySelectorAll(
+    ".section, .statement, .project, .expertise-card"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.08
+    }
+);
+
+
+revealElements.forEach((element) => {
+    observer.observe(element);
 });
