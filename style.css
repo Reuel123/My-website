@@ -822,7 +822,40 @@ footer a {
 /* =========================
    TABLET
 ========================= */
+.hero-text,
+.hero-photo-card,
+.floating-badge {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroReveal 0.9s ease forwards;
+}
 
+.hero-photo-card {
+    animation-delay: 0.25s;
+}
+
+.badge-one {
+    animation:
+        heroReveal 0.9s ease forwards 0.45s,
+        floatBadge 4s ease-in-out infinite 1.2s;
+}
+
+.badge-two {
+    animation:
+        heroReveal 0.9s ease forwards 0.6s,
+        floatBadge 4s ease-in-out infinite 1.6s;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @media (max-width: 1000px) {
 
     .hero h1,
