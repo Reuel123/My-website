@@ -900,7 +900,29 @@ footer a {
 ========================= */
 
 @media (max-width: 700px) {
+.hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
 
+.hero-visual {
+    min-height: auto;
+}
+
+.hero-photo-card {
+    width: 100%;
+    max-width: 360px;
+}
+
+.badge-one {
+    top: 20px;
+    left: 0;
+}
+
+.badge-two {
+    right: 0;
+    bottom: 20px;
+}
     .navbar {
         padding: 25px 6%;
     }
